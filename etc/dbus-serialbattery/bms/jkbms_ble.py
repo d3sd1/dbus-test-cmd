@@ -129,6 +129,7 @@ class Jkbms_Ble(Battery):
         return callback is not None
 
     def refresh_data(self):
+        logger.info("AGC - JK bluetooth BMS")
         # call all functions that will refresh the battery data.
         # This will be called for every iteration (1 second)
         # Return True if success, False for failure

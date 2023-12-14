@@ -41,7 +41,7 @@ class Jkbms(Battery):
             self.cells.append(Cell(False))
 
         self.hardware_version = (
-            "JKBMS "
+            "JKBMS agc"
             + str(self.cell_count)
             + " cells"
             + (" (" + self.production + ")" if self.production else "")
@@ -65,7 +65,7 @@ class Jkbms(Battery):
         return bytes[start + 1 : start + length + 1]
 
     def read_status_data(self):
-        logger.info("Reading status data - AGC")
+        logger.info("AGC - JK normal BMS")
         status_data = self.read_serial_data_jkbms(self.command_status)
         # check if connection success
         if status_data is False:

@@ -85,6 +85,7 @@ def main():
         retry = 1
         retries = 3
         while retry <= retries:
+            logger.info("AGC - General BMS")
             logger.info(
                 "-- Testing BMS: " + str(retry) + " of " + str(retries) + " rounds"
             )
