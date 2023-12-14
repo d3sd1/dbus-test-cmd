@@ -3,17 +3,9 @@
 # remove comment for easier troubleshooting
 #set -x
 
-echo ""
-PS3="Select which version you want to install and enter the corresponding number [1]: "
-
-
-echo ""
 
 ## latest release
-if [ "$version" = "latest release (recommended)" ]; then
-    # download latest release
-    curl -s https://api.github.com/repos/d3s1/dbus-test-cmd/releases/latest | grep "browser_download_url.*gz" | cut -d : -f 2,3 | tr -d \" | wget -O /tmp/venus-data.tar.gz -qi -
-fi
+ curl -s https://api.github.com/repos/d3s1/dbus-test-cmd/releases/latest | grep "browser_download_url.*gz" | cut -d : -f 2,3 | tr -d \" | wget -O /tmp/venus-data.tar.gz -qi -
 
 # restore config.ini
 if [ -f "/data/etc/dbus-serialbattery_config.ini.backup" ]; then
